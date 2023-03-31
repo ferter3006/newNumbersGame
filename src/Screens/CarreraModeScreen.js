@@ -43,6 +43,7 @@ function CarreraModeScreen({ boardSize }) {
                         <div className="row mt-2">
                             {/* <ClasicButton title={'Limited'} icon={grid2x2} color={'lightgreen'} handleclick={handleClick} /> */}
                             {/* <ClasicButton title={'Unlimited'} icon={grid3x3} color={'lightblue'} handleclick={handleClick} /> */}
+                            
                             <h4>Proximamente</h4>
 
                         </div>
