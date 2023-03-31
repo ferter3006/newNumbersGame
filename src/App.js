@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { store } from './Redux/store'
+import { Provider } from 'react-redux'
+import HomeScreen from "./Screens/HomeScreen";
+import Login from "./Screens/Login";
+import ClassicGameScreen from "./Screens/ClassicGameScreen";
+import { useState } from "react";
+import CarreraModeScreen from "./Screens/CarreraModeScreen";
+
 
 function App() {
+
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  const [boardSize, setBoardSize] = useState(isMobile ? 340 : 340 * 2)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/home" element={<HomeScreen />} />
+          <Route path="/clasic" element={<ClassicGameScreen boardSize={boardSize} />} />
+          <Route path="/carrera" element={<CarreraModeScreen boardSize={boardSize} />} />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 }
 
