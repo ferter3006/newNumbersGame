@@ -11,7 +11,7 @@ import CarreraModeScreen from "./Screens/CarreraModeScreen";
 function App() {
 
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-  const [boardSize, setBoardSize] = useState(isMobile ? 340 : 340 * 2)
+  const [boardSize, setBoardSize] = useState(isMobile ? 340 : 650 )
 
   return (
     <Provider store={store}>

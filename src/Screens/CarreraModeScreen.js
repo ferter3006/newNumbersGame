@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Board from '../Components/Board'
 import { creadorAleatorioDeValores } from '../Funcionalidades/CreadorRandom'
 import { setValues } from '../Redux/gameSlice'
 import backIcon from "../Media/back.png"
 import { useNavigate } from 'react-router-dom'
-import ClasicButton from '../Components/ClasicButton'
-import grid2x2 from "../Media/2x2.png"
-import grid3x3 from "../Media/3x3.png"
 
 function CarreraModeScreen({ boardSize }) {
     const dispatch = useDispatch()

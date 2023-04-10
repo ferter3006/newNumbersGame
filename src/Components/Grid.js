@@ -125,7 +125,7 @@ function Grid({ size, dimension, handleWin }) {
             if (element == "white") {
                 completed = false
             }
-        })        
+        })
         return completed
     }
 

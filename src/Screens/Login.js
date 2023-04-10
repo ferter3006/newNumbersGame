@@ -36,7 +36,10 @@ function Login() {
         .then(response => response.json())
         .then(JsonResponse => {
           if (JsonResponse.status !== 1) {
-            setSomeError(JsonResponse.message)
+            if (JsonResponse.message) {
+              setSomeError(JsonResponse.message)
+            } else {
+            }
             setShowError(true)
             setTimeout(() => {
               setShowError(false)
@@ -47,6 +50,13 @@ function Login() {
             alert('correcto, ahora tiene que iniciar sesión')
             setRegister(false)
           }
+        })
+        .catch((err) => {
+          setSomeError("Servidor temporalmente Offline")
+          setShowError(true)
+          setTimeout(() => {
+            setShowError(false)
+          }, 3000);
         })
     } else {
       // login
@@ -76,13 +86,20 @@ function Login() {
             navigate('/home')
           }
         })
+        .catch((err) => {
+          setSomeError("Servidor temporalmente Offline")
+          setShowError(true)
+          setTimeout(() => {
+            setShowError(false)
+          }, 3000);
+        })
     }
   }
 
   return (
     <div className='d-flex justify-content-center' style={{ backgroundColor: 'black', width: '100vw', height: '100vh', paddingTop: '30vh' }}>
       <div className='text-center'>
-        <h1 style={{ color: 'white', fontSize: 23 }}>Welcome to<span style={{ color: 'orange' }}> Koshiki Game</span></h1>
+        <h1 style={{ color: 'white', fontSize: 23 }}>Welcome to<span style={{ color: 'orange' }}>Suujigemu</span></h1>
         <div className='btn ' onClick={() => setRegister(prev => !prev)} style={{ borderTop: '1px solid orange' }}>
           <h3 style={{ color: 'white', fontSize: 15 }}><span className='align-middle' style={{ color: register ? 'darkorange' : 'white', marginRight: '5px' }} >Register</span> <span className='align-middle' style={{ color: register ? 'white' : 'darkorange', marginLeft: '5px' }}>Login</span></h3>
         </div>

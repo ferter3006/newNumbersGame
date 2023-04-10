@@ -38,7 +38,7 @@ function HomeScreen() {
     return (
         <div className='d-flex flex-column justify-content-center' style={{ backgroundColor: 'black', width: '100vw', height: '100vh' }}>
             <div className='text-center'>
-                <h1 style={{ color: 'white', fontSize: 23 }}><span style={{ color: 'orange' }}> Koshiki Game</span></h1>
+                <h1 style={{ color: 'white', fontSize: 23 }}><span style={{ color: 'orange' }}> Suujigemu</span></h1>
 
                 <div className='d-flex flex-row justify-content-center' style={{ margin: '0 25vw' }}>
                     <div className='col-2 col-sm-2 d-flex align-items-center justify-content-end'>
